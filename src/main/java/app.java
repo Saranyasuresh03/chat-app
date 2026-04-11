@@ -16,7 +16,7 @@ public class app {
             String response =
                     "<html>" +
                     "<body style='text-align:center;font-family:Arial'>" +
-                    "<h2>Chat App - V2</h2>" +
+                    "<h2>Chat App - V3</h2>" +
 
                     "<p>Message: " + message + "</p>" +
 

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-v3
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-v3
+
+  template:
+    metadata:
+      labels:
+        app: chat-v3
+        spec:
+    containers:
+      - name: chat
+        image: 23mis0532/chat-app:v3
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-service-v3
+
+spec:
+  type: NodePort
+  selector:
+    app: chat-v3
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 30003
